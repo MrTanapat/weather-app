@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
 
 body {
-    background: #051923;
+    background: linear-gradient(rgba(37, 47, 59, 1), rgba(89, 100, 117, 1));
     color: #E0E1DD;
     font-family: "Kanit", sans-serif;
     display: flex;
@@ -9,29 +9,125 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
+    transition: background 1s ease-in-out, color 1s ease-in-out;
 }
-.app-container {
-    background: #003554;
-    padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    width: 90%;
-    max-width: 400px;
+
+/*WeatherColorThemes Day*/
+body.theme-day-hot .app-container {
+    background: linear-gradient(to top, rgba(255, 237, 191, 0.8), rgba(255, 114, 81, 0.8));
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(255, 114, 81, 0.25);
+    color: #333;
+}
+
+body.theme-day-clear .app-container{
+    background: linear-gradient(to top,rgba(219, 232, 243, 1.0), rgba(173, 216, 230, 1.0));
+    color: #333;
+}
+
+body.theme-day-cloudy .app-container{
+    background: linear-gradient(to top,rgba(176, 196, 222, 1.0), rgba(220, 220, 220, 1.0));
+    color: #333;
+    backdrop-filter: blur(5px);
+}
+
+body.theme-day-rain .app-container {
+    background: linear-gradient(to top, rgba(112, 128, 144, 1.0), rgba(169, 169, 169, 1.0));
+    color: #E0E1DD;
+}
+
+/*WeaterColorThemes Night*/
+body.theme-night-clear .app-container {
+    background: linear-gradient(to top, rgba(119, 141, 169, 1.0), rgba(65, 90, 119, 1.0));
+    color: #E0E1DD;
+}
+
+body.theme-night-cloudy .app-container {
+    background: linear-gradient(to top, rgba(65, 90, 119, 1.0), rgba(164, 164, 164, 1.0));
+    color: #E0E1DD;
+}
+
+body.theme-night-rain .app-container {
+    background: linear-gradient(to top, rgba(44, 62, 80, 1.0), rgba(164, 164, 164, 1.0));
+    color: #E0E1DD;
+}
+
+.forecast-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 2rem;
+    overflow-x: auto;
+}
+
+.forecast-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0.75rem;
+    padding: 1rem;
     text-align: center;
+    flex-shrink: 0;
+    width: 90px;
 }
-h1 { color: #00A6FB; }
+
+.forecast-card p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.forecast-card .temp {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+}
+
+.app-container {
+    background: linear-gradient(
+      135deg, 
+      rgba(255, 255, 255, 0.15), 
+      rgba(255, 255, 255, 0.05)
+    );
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 1rem;
+    width: 60%;
+    max-width: 700px;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+}
 #search-form { display: flex; gap: 0.5rem; margin: 1.5rem 0; }
 #city-input {
-    flex-grow: 1; padding: 0.75rem; border: 1px solid #006494;
-    border-radius: 0.5rem; background: #051923; color: #E0E1DD;
+    flex-grow: 1; 
+    padding: 0.75rem;
+    border: none; 
+    border-radius: 0.5rem; 
+    background: rgba(0, 0, 0, 0.2);
+    color: #E0E1DD;
     font-size: 1rem;
 }
+
 #search-form button {
     padding: 0.75rem 1rem; background-color: #00A6FB; color: #051923;
     border: none; border-radius: 0.5rem; font-size: 1rem; font-weight: bold;
     cursor: pointer; transition: background-color 0.2s;
 }
-#search-form button:hover { background-color: #0582CA; }
-.weather-info { margin-top: 1.5rem; min-height: 150px; }
-.weather-info .temp { font-size: 3rem; font-weight: bold; margin: 0.5rem 0; }
+
+#search-form button:hover { 
+    background-color: #0582CA; 
+    transform: translateY(-2px);  }
+
+#search-form button:active {
+    transform: translateY(0);
+}
+.weather-info { 
+    margin-top: 1.5rem; 
+    min-height: 150px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);}
+.weather-info .temp { 
+    font-size: 3rem; 
+    font-weight: bold; 
+    margin: 0.5rem 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);}
 .error { color: #ff4d4d; font-weight: bold; }
