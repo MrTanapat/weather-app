@@ -40,6 +40,26 @@ function displayWeather(data) {
   const { name, main, weather } = data;
   const { temp, humidity } = main;
   const { description, icon } = weather[0];
+  const targetElment = document.body;
+
+  targetElment.className = ""; //Remove body class
+  targetElment.classList.add("default-styles");
+
+  const timeOfday = icon.endsWith("d") ? "day" : "night";
+  let weatherCondition = "cloudy";
+
+  if (icon.includes("01")) {
+    weatherCondition = "clear";
+  } else if (
+    icon.includes("09") ||
+    icon.includes("10") ||
+    icon.includes("11")
+  ) {
+    weatherCondition = "rain";
+  }
+
+  const themeClass = `theme-${timeOfday}-${weatherCondition}`;
+  targetElment.classList.add(themeClass);
 
   const weatherHtml = `
         <h2 class="text-2xl font-bold">${name}</h2>
