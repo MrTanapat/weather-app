@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
 
 body {
-    background: linear-gradient(180deg, #f0eff4, #596475);
+    background: linear-gradient(rgba(37, 47, 59, 1), rgba(89, 100, 117, 1));
     color: #E0E1DD;
     font-family: "Kanit", sans-serif;
     display: flex;
@@ -53,17 +53,49 @@ body.theme-night-rain .app-container {
     color: #E0E1DD;
 }
 
-.app-container {
+.forecast-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 2rem;
+    overflow-x: auto;
+}
+
+.forecast-card {
     background: rgba(255, 255, 255, 0.1);
-    padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    width: 90%;
-    max-width: 400px;
+    border-radius: 0.75rem;
+    padding: 1rem;
     text-align: center;
-    transition: background 1s ease-in-out;
-    backdrop-filter: blur(10px);
+    flex-shrink: 0;
+    width: 90px;
+}
+
+.forecast-card p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.forecast-card .temp {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+}
+
+.app-container {
+    background: linear-gradient(
+      135deg, 
+      rgba(255, 255, 255, 0.15), 
+      rgba(255, 255, 255, 0.05)
+    );
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 1.25rem;
     border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 1rem;
+    width: 60%;
+    max-width: 700px;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
 }
 #search-form { display: flex; gap: 0.5rem; margin: 1.5rem 0; }
 #city-input {
