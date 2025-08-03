@@ -15,9 +15,6 @@ body {
 /*WeatherColorThemes Day*/
 body.theme-day-hot .app-container {
     background: linear-gradient(to top, rgba(255, 237, 191, 0.8), rgba(255, 114, 81, 0.8));
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    box-shadow: 0 8px 32px 0 rgba(255, 114, 81, 0.25);
     color: #333;
 }
 
@@ -29,7 +26,6 @@ body.theme-day-clear .app-container{
 body.theme-day-cloudy .app-container{
     background: linear-gradient(to top,rgba(176, 196, 222, 1.0), rgba(220, 220, 220, 1.0));
     color: #333;
-    backdrop-filter: blur(5px);
 }
 
 body.theme-day-rain .app-container {
