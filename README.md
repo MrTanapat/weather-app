@@ -1,8 +1,8 @@
 # Weather App
 แสดงผลสภาพอากาศปัจจุบันและพยากรณ์อากาศล่วงหน้า 5 วัน สร้างขึ้นด้วย HTML, CSS, และ JavaScript โดยเชื่อมต่อกับ OpenWeatherMap API
 
-**Live Demo:** [Weather App](https://mrtanapat.github.io/weather-app/)
-**Document** [DOC](https://docs.google.com/document/d/1XEsPNRkwHC5OfzTDT2UWNnr8j9fYTEnqEBitIMSfdRQ/edit?usp=sharing)
+- **Live Demo:** [Weather App](https://mrtanapat.github.io/weather-app/)
+- **Document** [DOC](https://docs.google.com/document/d/1XEsPNRkwHC5OfzTDT2UWNnr8j9fYTEnqEBitIMSfdRQ/edit?usp=sharing)
 
 ### ✨ Features
 - 🔍 **ค้นหาสภาพอากาศ:** ค้นหาข้อมูลอากาศจากชื่อเมืองทั่วโลก
